@@ -4,9 +4,7 @@
   "description": "rsmq plugin for egg",
   "eggPlugin": {
     "name": "rsmq",
-    "dependencies": [
-      "redis"
-    ]
+    "dependencies": []
   },
   "keywords": [
     "egg",
@@ -14,7 +12,6 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "egg-redis": "^2.4.0",
     "rsmq": "^0.11.0"
   },
   "devDependencies": {
