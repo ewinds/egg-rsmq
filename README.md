@@ -32,9 +32,17 @@ $ npm i egg-rsmq --save
 
 ```js
 // {app_root}/config/plugin.js
-exports.mysqlPaginator = {
+exports.rsmq = {
   enable: true,
   package: "egg-rsmq"
+};
+```
+
+```js
+// {app_root}/config/config.default.js
+config.rsmq = {
+  host: "192.168.16.104",
+  port: 6379
 };
 ```
 
@@ -42,45 +50,9 @@ exports.mysqlPaginator = {
 
 ```javascript
 // query
-const results = await app.mysqlPaginator.query('posts',{
-  where: { status: 'draft' },
-  orders: [['created_at','desc'], ['id','desc']],
-  page: 1,
-  size: 10
-});
-// result
-  {
-    pagination: {
-      total: 21,
-      size: 10,
-      currentPage: 1,
-      lastPage: 3,
-      from: 0,
-      to: 10
-    },
-    data: [...]
-  }
-```
-
-### Fuzzy query
-
-```javascript
-const results = await app.mysqlPaginator.query("posts", {
-  where: "WHERE name LIKE %name%",
-  orders: [["created_at", "desc"], ["id", "desc"]],
-  page: 1,
-  size: 10
-});
-```
-
-### Customized order by
-
-```javascript
-const results = await app.mysqlPaginator.query("posts", {
-  where: "WHERE name LIKE %name%",
-  orders: "rank+",
-  page: 1,
-  size: 10
+await app.rsmq.sendMessageAsync({
+  name: "foo",
+  message: JSON.stringify(json_info)
 });
 ```
 

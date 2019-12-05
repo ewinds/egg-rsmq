@@ -52,7 +52,7 @@
     "url": "git+https://github.com/ewinds/egg-rsmq.git"
   },
   "bugs": {
-    "url": "https://github.com/ewinds/egg/issues"
+    "url": "https://github.com/ewinds/egg-rsmq/issues"
   },
   "homepage": "https://github.com/ewinds/egg-rsmq#readme",
   "author": "ewinds",
