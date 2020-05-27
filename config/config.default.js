@@ -5,4 +5,4 @@
  * @member Config#rsmq
  * @property {String} SOME_KEY - some description
  */
-exports.rsmq = { host: '127.0.0.1', port: 6379 };
+exports.rsmq = { host: '127.0.0.1', port: 6379, ns: 'rsmq' };

@@ -1,6 +1,6 @@
 {
   "name": "egg-rsmq",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "rsmq plugin for egg",
   "eggPlugin": {
     "name": "rsmq",
